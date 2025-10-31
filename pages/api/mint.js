@@ -22,8 +22,10 @@ export default function handler(req, res) {
         description: "Pay 1 USDC on Base to mint x402frogs collectible",
         mimeType: "application/vnd.x402+json",
         payTo: [
-          "base:0x1DEf6d9E7ba7256dF17d01Bf7D8FA62d82A27Fc4"
-        ], // ← тепер це масив рядків, не об'єктів
+          {
+            uri: "base:0x1DEf6d9E7ba7256dF17d01Bf7D8FA62d82A27Fc4"
+          }
+        ], // 👈 правильний формат
         maxTimeoutSeconds: 600
       }
     ],
