@@ -14,18 +14,16 @@ export default function handler(req, res) {
       {
         scheme: "exact",
         network: "base",
-        asset: "erc20:0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913", // змінили з resource
-        amount: "1000000",         // 1 USDC у 6 decimals
+        resource: "erc20:0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913", // ← знову повернули
+        asset: "USDC", // ← тепер і resource, і asset
+        amount: "1000000",
         decimals: 6,
-        maxAmountRequired: "1",    // тепер очікують string "1"
+        maxAmountRequired: "1", // рядок
         description: "Pay 1 USDC on Base to mint x402frogs collectible",
         mimeType: "application/vnd.x402+json",
         payTo: [
-          {
-            address: "0x1DEf6d9E7ba7256dF17d01Bf7D8FA62d82A27Fc4",
-            network: "base"       // chain -> network
-          }
-        ],
+          { address: "0x1DEf6d9E7ba7256dF17d01Bf7D8FA62d82A27Fc4", network: "base" }
+        ], // ← масив з об'єктом
         maxTimeoutSeconds: 600
       }
     ],
