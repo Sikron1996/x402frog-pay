@@ -21,11 +21,9 @@ export default function handler(req, res) {
         maxAmountRequired: "1",
         description: "Pay 1 USDC on Base to mint x402frogs collectible",
         mimeType: "application/vnd.x402+json",
-        payTo: [
-          {
-            uri: "base:0x1DEf6d9E7ba7256dF17d01Bf7D8FA62d82A27Fc4"
-          }
-        ], // 👈 правильний формат
+        payTo: {
+          uri: "base:0x1DEf6d9E7ba7256dF17d01Bf7D8FA62d82A27Fc4"
+        }, // 👈 один об'єкт із ключем uri
         maxTimeoutSeconds: 600
       }
     ],
